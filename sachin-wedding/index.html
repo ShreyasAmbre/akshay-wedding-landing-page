@@ -100,7 +100,8 @@
     .divider-icon { color: var(--gold); font-size: 1.1rem; }
 
     .tagline {
-      font-size: clamp(.95rem, 2.2vw, 1.2rem);
+      /* font-size: clamp(.95rem, 2.2vw, 1.2rem); */
+      font-size: clamp(1.1rem, 2.2vw, 1.2rem);
       font-style: italic;
       color: var(--maroon);
       opacity: .75;
@@ -109,13 +110,14 @@
     .date-badge {
       display: inline-block;
       margin-bottom: 0.2rem;
-      padding: .4rem 1.4rem;
+      /* padding: .4rem 1.4rem; */
+      padding: .4rem 0.5rem;
       border: 1px solid var(--gold);
       border-radius: 2rem;
-      font-size: .85rem;
+      font-size: 1.1rem;
       letter-spacing: .12em;
       color: var(--gold);
-      text-transform: uppercase;
+      /* text-transform: uppercase; */
     }
 
     /* ── Corner ornaments ── */
@@ -209,18 +211,23 @@
       text-align: center;
     }
 
-    .card-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      margin-bottom: .9rem;
-      font-size: 1.4rem;
-      box-shadow: 0 4px 20px rgba(200,151,58,.5);
-      transition: transform .3s ease;
-    }
+   .card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+
+    background-color: #FFF8E1;
+    background-image: url('./assets/logo2.png');
+    background-size: 97%;  
+    background-position: center;
+    background-repeat: no-repeat;
+
+    margin-bottom: .9rem;
+    box-shadow: 0 4px 20px rgba(200,151,58,.3);
+  }
     .card:hover .card-icon { transform: scale(1.12) rotate(-5deg); }
 
     .card-type {
@@ -308,8 +315,7 @@
     /* ── Responsive ── */
     @media (max-width: 600px) {
       .ornament { width: 80px; }
-      /* .card-img { height: 360px; } */
-      .card-img { height: 200px; }
+      .card-img { height: 360px; }
       /* .cards-section { gap: 1.5rem; padding: 0 1rem 3rem; } */
       .cards-section { gap: 1.5rem; padding: 0 1rem 1rem; }
     }
@@ -334,6 +340,7 @@
       z-index: 0;
       animation: fall linear infinite;
     }
+    
     @keyframes fall {
       0%   { opacity: 0; transform: translateY(-20px) rotate(0deg); }
       10%  { opacity: .55; }
@@ -414,38 +421,46 @@
 
     <h1 class="couple">Sachin &amp; <em>Shreya</em></h1>
 
-    <div class="divider">
+    <div class="divider" style="margin-bottom: 20px;">
       <span class="divider-line"></span>
       <span class="divider-icon">❋</span>
       <span class="divider-line"></span>
     </div>
 
-    <p class="tagline">Two souls, one destiny. Join us as we begin forever</p>
-    <span class="date-badge">🗓 &nbsp; <b>29 April 2026</b>  &nbsp;·&nbsp; Belgavi, Karnataka</span>
+    <p class="tagline" style="margin-bottom: 10px">Two souls, one destiny. Join us as we begin forever</p>
+    <!-- <span class="date-badge">🗓 &nbsp; <b>29 April 2026</b>  &nbsp;·&nbsp; Belgavi, Karnataka</span> -->
+    <span class="date-badge" style="margin-bottom: 20px;">🗓<b>29 April 2026&nbsp;·&nbsp;12:30 PM Onwards</b> Belgavi, Karnataka</span>
   </header>
 
   <!-- Location Cards -->
   <section class="cards-section" style="margin-top: 0rem;">
 
     <a class="card"
-       href="https://maps.app.goo.gl/FRFfkE5fk53NLLcM6"
+       href="https://maps.app.goo.gl/cXVZusG3QzrRqVNw6?g_st=aw"
        target="_blank" rel="noopener noreferrer" aria-label="Get directions to Wedding Venue">
 
       <div class="card-ribbon">Wedding Day</div>
 
       <!-- Beautiful Unsplash image – Indian wedding mandap -->
+      <!-- <img class="card-img"
+           src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=900&q=80&auto=format&fit=crop"
+           alt="Beautifully decorated Indian wedding mandap with flowers and lights"
+           loading="lazy"/> -->
       <img class="card-img"
-           src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80&auto=format&fit=crop"
+           src="./assets/card1.png"
            alt="Beautifully decorated Indian wedding mandap with flowers and lights"
            loading="lazy"/>
 
       <div class="card-overlay"></div>
 
       <div class="card-body">
-        <div class="card-icon">🏛️</div>
+        <!-- <div class="card-icon">🏛️</div> -->
+        <div class="card-icon">
+          <!-- <img src="./assets/logo2.png" alt="icon"> -->
+        </div>
         <p class="card-type">Wedding Venue</p>
-        <h2 class="card-title">Coconut Retreat Hall</h2>
-        <p class="card-address">Harkul Budruk,<br/>Near Grampanchayat, Tal: Kankavli Dist: Sindhudurag</p>
+        <h2 class="card-title">Pai Convention Hall</h2>
+        <p class="card-address">Behind Nagshanti Showroom,<br/>Udyambag, Belagavi, Karnataka 590008</p>
         <span class="card-btn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
           Get Location
@@ -461,7 +476,7 @@
     ❋ &nbsp; Made with love for a celebration of togetherness &nbsp; ❋
     <br><br>
     <span style="font-family:'Playfair Display',serif; font-size:.50rem; color:var(--gold); opacity:1; letter-spacing:.08em;">
-      Designed & Developed with ❤️ by <strong><i>- Shreyas (BaBa)</i></strong>
+      Designed & Developed with ❤️ by <strong><i>- Shreyas (shreyasambre00@gmail.com)</i></strong>
     </span>
   </footer>
 
